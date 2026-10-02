@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CRUD Gênero</title>
+
+    <link rel="stylesheet" href="genero.css">
+</head>
+
+<body onload="inicializar()">
+
+    <header>
+        <h1>Cadastro de Gêneros Literários</h1>
+        <p>Gerencie os gêneros literários dos livros da biblioteca.</p>
+    </header>
+
+
+    <main class="container-master">
+
+        <div class="conteudo-principal">
+
+            <!-- =================================
+                 DADOS DO GÊNERO
+            ================================== -->
+
+            <section class="form-esquerda">
+
+                <h2>Dados do Gênero</h2>
+
+
+                <!-- ID -->
+
+                <label for="inputId_genero">
+                    ID do Gênero
+                </label>
+
+                <div class="linha-id">
+
+                    <input
+                        type="text"
+                        id="inputId_genero"
+                        placeholder="Ex: 1"
+                    >
+
+                    <input
+                        type="button"
+                        value="Procurar"
+                        id="btProcurar"
+                        onclick="procurar()"
+                    >
+
+                    <input
+                        type="button"
+                        value="Inserir"
+                        id="btInserir"
+                        onclick="inserir()"
+                        style="display:none;"
+                    >
+
+                    <input
+                        type="button"
+                        value="Alterar"
+                        id="btAlterar"
+                        onclick="alterar()"
+                        style="display:none;"
+                    >
+
+                    <input
+                        type="button"
+                        value="Excluir"
+                        id="btExcluir"
+                        onclick="excluir()"
+                        style="display:none;"
+                    >
+
+                </div>
+
+
+                <!-- NOME -->
+
+                <label for="inputNome_genero">
+                    Nome do Gênero
+                </label>
+
+                <input
+                    type="text"
+                    id="inputNome_genero"
+                    placeholder="Ex: Romance"
+                    readonly
+                >
+
+
+                <!-- DESCRIÇÃO -->
+
+                <label for="inputDescricao_genero">
+                    Descrição
+                </label>
+
+                <textarea
+                    id="inputDescricao_genero"
+                    rows="7"
+                    placeholder="Descreva as principais características desse gênero literário..."
+                    readonly
+                ></textarea>
+
+
+                <!-- AVISO -->
+
+                <div id="divAviso">
+                    Informe o ID e clique em Procurar
+                </div>
+
+
+                <!-- BOTÕES -->
+
+                <div class="botoes-acao">
+
+                    <input
+                        type="button"
+                        value="Salvar"
+                        id="btSalvar"
+                        onclick="salvar()"
+                        style="display:none;"
+                    >
+
+                    <input
+                        type="button"
+                        value="Cancelar"
+                        id="btCancelar"
+                        onclick="cancelarOperacao()"
+                        style="display:none;"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 PAINEL LATERAL
+            ================================== -->
+
+            <aside class="form-direita">
+
+                <h2>Gêneros Literários</h2>
+
+                <p class="instrucao-genero">
+                    Organize os livros da biblioteca
+                    de acordo com seus respectivos
+                    gêneros literários.
+                </p>
+
+
+                <div class="info-generos">
+
+                    <div class="info-item">
+
+                        <span class="info-icon">📖</span>
+
+                        <div>
+                            <strong>Classificação</strong>
+
+                            <p>
+                                Cada livro pode ser associado
+                                a um gênero literário.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-icon">🏷️</span>
+
+                        <div>
+                            <strong>Organização</strong>
+
+                            <p>
+                                Facilite a organização e
+                                consulta do acervo.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span class="info-icon">📚</span>
+
+                        <div>
+                            <strong>Acervo</strong>
+
+                            <p>
+                                Consulte os livros de acordo
+                                com seus gêneros.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+
+        <!-- =================================
+             LISTA DE GÊNEROS
+        ================================== -->
+
+        <section class="lista-genero">
+
+            <h3>Gêneros Cadastrados</h3>
+
+            <div id="outputSaida">
+                Carregando...
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            &copy; 2026 Sistema de Gerenciamento de Biblioteca.
+            Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+
+    <script src="./genero.js"></script>
+
+</body>
+
+</html>

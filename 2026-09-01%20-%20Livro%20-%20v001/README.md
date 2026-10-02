@@ -1,0 +1,1 @@
+Projeto exemplo com menu e 2 Cruds (produto e unidade de medida) IMPORTANTE: Há 6 cruds no projeto, foram feitos 4 cruds com imagens, que era o mínimo indicado no enunciado.  

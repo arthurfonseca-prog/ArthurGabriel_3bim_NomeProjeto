@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CRUD Editora</title>
+
+    <link rel="stylesheet" href="editora.css">
+</head>
+
+<body onload="inicializar()">
+
+    <header>
+        <h1>Cadastro de Editoras</h1>
+        <p>Gerencie as editoras cadastradas na biblioteca.</p>
+    </header>
+
+    <main class="container-master">
+
+        <div class="conteudo-principal">
+
+            <!-- =========================
+                 FORMULÁRIO DA EDITORA
+            ========================== -->
+            <section class="form-esquerda">
+
+                <h2>Dados da Editora</h2>
+
+                <!-- ID -->
+                <label for="inputId_editora">
+                    ID da Editora
+                </label>
+
+                <div class="linha-id">
+
+                    <input
+                        type="text"
+                        name="inputId_editora"
+                        id="inputId_editora"
+                        placeholder="Ex: 1"
+                    >
+
+                    <input
+                        type="button"
+                        value="Procurar"
+                        id="btProcurar"
+                        onclick="procurar()"
+                    >
+
+                    <input
+                        type="button"
+                        value="Inserir"
+                        id="btInserir"
+                        onclick="inserir()"
+                        style="display:none;"
+                    >
+
+                    <input
+                        type="button"
+                        value="Alterar"
+                        id="btAlterar"
+                        onclick="alterar()"
+                        style="display:none;"
+                    >
+
+                    <input
+                        type="button"
+                        value="Excluir"
+                        id="btExcluir"
+                        onclick="excluir()"
+                        style="display:none;"
+                    >
+
+                </div>
+
+
+                <!-- NOME -->
+                <label for="inputNome_editora">
+                    Nome da Editora
+                </label>
+
+                <input
+                    type="text"
+                    name="inputNome_editora"
+                    id="inputNome_editora"
+                    placeholder="Ex: Companhia das Letras"
+                    readonly
+                >
+
+
+                <!-- PAÍS -->
+                <label for="inputPais_editora">
+                    País
+                </label>
+
+                <input
+                    type="text"
+                    name="inputPais_editora"
+                    id="inputPais_editora"
+                    placeholder="Ex: Brasil"
+                    readonly
+                >
+
+
+                <!-- SITE -->
+                <label for="inputSite_editora">
+                    Site
+                </label>
+
+                <input
+                    type="url"
+                    name="inputSite_editora"
+                    id="inputSite_editora"
+                    placeholder="https://www.exemplo.com.br"
+                    readonly
+                >
+
+
+                <!-- AVISO -->
+                <div id="divAviso">
+                    Informe o ID e clique em Procurar
+                </div>
+
+
+                <!-- BOTÕES -->
+                <div class="botoes-acao">
+
+                    <input
+                        type="button"
+                        value="Salvar"
+                        id="btSalvar"
+                        onclick="salvar()"
+                        style="display:none;"
+                    >
+
+                    <input
+                        type="button"
+                        value="Cancelar"
+                        id="btCancelar"
+                        onclick="cancelarOperacao()"
+                        style="display:none;"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 IMAGEM / LOGO
+            ========================== -->
+            <aside class="form-direita">
+
+                <h2>Logo da Editora</h2>
+
+                <p class="instrucao-imagem">
+                    (Clique na imagem para alterar)
+                </p>
+
+                <div class="img-container">
+
+                    <img
+                        id="imgEditora"
+                        src="http://localhost:3001/imagens/silhueta.png"
+                        alt="Logo da Editora"
+                        onclick="acionarUpload()"
+                    >
+
+                    <input
+                        type="file"
+                        id="inputImagem"
+                        accept="image/*"
+                        style="display:none;"
+                        onchange="previewImagem()"
+                    >
+
+                </div>
+
+            </aside>
+
+        </div>
+
+
+        <!-- =========================
+             LISTA DE EDITORAS
+        ========================== -->
+        <section class="lista-editora">
+
+            <h3>Editoras Cadastradas</h3>
+
+            <div id="outputSaida">
+                Carregando...
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            &copy; 2026 Sistema de Gerenciamento de Biblioteca.
+            Todos os direitos reservados.
+        </p>
+    </footer>
+
+
+    <script src="./editora.js"></script>
+
+</body>
+
+</html>

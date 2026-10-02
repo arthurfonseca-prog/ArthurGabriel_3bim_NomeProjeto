@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CRUD Pessoa</title>
+
+    <link rel="stylesheet" href="pessoa.css">
+</head>
+
+<body onload="inicializar()">
+
+    <header>
+        <h1>Cadastro de Pessoas</h1>
+        <p>Gerencie as pessoas cadastradas na biblioteca.</p>
+    </header>
+
+
+    <main class="container-master">
+
+        <div class="conteudo-principal">
+
+            <!-- =================================
+                 DADOS DA PESSOA
+                 ================================= -->
+
+            <section class="form-esquerda">
+
+                <h2>Dados da Pessoa</h2>
+
+                <label for="inputId_pessoa">
+                    ID da Pessoa
+                </label>
+
+                <div class="linha-id">
+
+                    <input
+                        type="text"
+                        id="inputId_pessoa"
+                        placeholder="Ex: 1"
+                    >
+
+                    <input
+                        type="button"
+                        value="Procurar"
+                        id="btProcurar"
+                        onclick="procurar()"
+                    >
+
+                    <input
+                        type="button"
+                        value="Inserir"
+                        id="btInserir"
+                        onclick="inserir()"
+                        style="display:none;"
+                    >
+
+                    <input
+                        type="button"
+                        value="Alterar"
+                        id="btAlterar"
+                        onclick="alterar()"
+                        style="display:none;"
+                    >
+
+                    <input
+                        type="button"
+                        value="Excluir"
+                        id="btExcluir"
+                        onclick="excluir()"
+                        style="display:none;"
+                    >
+
+                </div>
+
+
+                <label for="inputNome_pessoa">
+                    Nome completo
+                </label>
+
+                <input
+                    type="text"
+                    id="inputNome_pessoa"
+                    placeholder="Ex: Arthur Fonseca"
+                >
+
+
+                <label for="inputEmail_pessoa">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="inputEmail_pessoa"
+                    placeholder="Ex: pessoa@email.com"
+                >
+
+
+                <label for="inputTelefone_pessoa">
+                    Telefone
+                </label>
+
+                <input
+                    type="tel"
+                    id="inputTelefone_pessoa"
+                    placeholder="Ex: (44) 99999-9999"
+                >
+
+
+                <div id="divAviso">
+                    Informe o ID e clique em Procurar
+                </div>
+
+
+                <div class="botoes-acao">
+
+                    <input
+                        type="button"
+                        value="Salvar"
+                        id="btSalvar"
+                        onclick="salvar()"
+                        style="display:none;"
+                    >
+
+                    <input
+                        type="button"
+                        value="Cancelar"
+                        id="btCancelar"
+                        onclick="cancelarOperacao()"
+                        style="display:none;"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 IMAGEM DA PESSOA
+                 ================================= -->
+
+            <aside class="form-direita">
+
+                <h2>Foto da Pessoa</h2>
+
+                <p class="instrucao-imagem">
+                    (Clique na imagem para alterar)
+                </p>
+
+                <div class="img-container">
+
+                    <img
+                        id="imgPessoa"
+                        src="http://localhost:3001/imagens/silhueta.png"
+                        alt="Foto da pessoa"
+                        onclick="acionarUpload()"
+                    >
+
+                    <input
+                        type="file"
+                        id="inputImagem"
+                        accept="image/*"
+                        style="display:none;"
+                        onchange="previewImagem()"
+                    >
+
+                </div>
+
+            </aside>
+
+        </div>
+
+
+        <!-- =================================
+             LISTA DE PESSOAS
+             ================================= -->
+
+        <section class="lista-pessoa">
+
+            <h3>Pessoas Cadastradas</h3>
+
+            <div id="outputSaida">
+                Carregando...
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            &copy; 2026 Sistema de Gerenciamento de Biblioteca.
+            Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+
+    <script src="./pessoa.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gerenciamento de Empréstimos</title>
+
+    <link rel="stylesheet" href="emprestimo.css">
+</head>
+
+<body onload="inicializar()">
+
+    <!-- CABEÇALHO -->
+    <header>
+
+        <h1>Gerenciamento de Empréstimos</h1>
+
+        <p>
+            Registre empréstimos, devoluções e acompanhe os livros atrasados.
+        </p>
+
+    </header>
+
+
+    <main class="container-master">
+
+        <!-- ============================= -->
+        <!-- PAINEL DE RESUMO               -->
+        <!-- ============================= -->
+
+        <section class="resumo">
+
+            <div class="card-resumo">
+
+                <span class="icone">📚</span>
+
+                <div>
+                    <h3>Livros emprestados</h3>
+                    <strong id="totalEmprestados">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="card-resumo">
+
+                <span class="icone">👤</span>
+
+                <div>
+                    <h3>Pessoas com empréstimos</h3>
+                    <strong id="totalPessoas">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="card-resumo">
+
+                <span class="icone">⚠️</span>
+
+                <div>
+                    <h3>Empréstimos atrasados</h3>
+                    <strong id="totalAtrasados">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="card-resumo">
+
+                <span class="icone">↩️</span>
+
+                <div>
+                    <h3>Devolvidos</h3>
+                    <strong id="totalDevolvidos">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- FORMULÁRIO + INFORMAÇÕES       -->
+        <!-- ============================= -->
+
+        <div class="conteudo-principal">
+
+
+            <!-- FORMULÁRIO -->
+
+            <section class="form-esquerda">
+
+                <h2>Dados do Empréstimo</h2>
+
+
+                <!-- ID -->
+
+                <label for="inputId_emprestimo">
+                    ID do Empréstimo
+                </label>
+
+                <div class="linha-id">
+
+                    <input
+                        type="text"
+                        id="inputId_emprestimo"
+                        placeholder="Ex: 1"
+                    >
+
+                    <input
+                        type="button"
+                        value="Procurar"
+                        id="btProcurar"
+                        onclick="procurar()"
+                    >
+
+                    <input
+                        type="button"
+                        value="Inserir"
+                        id="btInserir"
+                        onclick="inserir()"
+                        style="display:none;"
+                    >
+
+                    <input
+                        type="button"
+                        value="Alterar"
+                        id="btAlterar"
+                        onclick="alterar()"
+                        style="display:none;"
+                    >
+
+                    <input
+                        type="button"
+                        value="Excluir"
+                        id="btExcluir"
+                        onclick="excluir()"
+                        style="display:none;"
+                    >
+
+                </div>
+
+
+                <!-- PESSOA -->
+
+                <label for="selectId_pessoa">
+                    Pessoa
+                </label>
+
+                <select
+                    id="selectId_pessoa"
+                    name="selectId_pessoa"
+                    required
+                >
+
+                    <option value="">
+                        Selecione uma pessoa
+                    </option>
+
+                </select>
+
+
+                <!-- LIVRO -->
+
+                <label for="selectId_livro">
+                    Livro
+                </label>
+
+                <select
+                    id="selectId_livro"
+                    name="selectId_livro"
+                    required
+                >
+
+                    <option value="">
+                        Selecione um livro
+                    </option>
+
+                </select>
+
+
+                <!-- DATA DO EMPRÉSTIMO -->
+
+                <label for="inputData_emprestimo">
+                    Data do Empréstimo
+                </label>
+
+                <input
+                    type="date"
+                    id="inputData_emprestimo"
+                    name="inputData_emprestimo"
+                    required
+                >
+
+
+                <!-- DATA PREVISTA -->
+
+                <label for="inputData_prevista_devolucao">
+                    Data Prevista para Devolução
+                </label>
+
+                <input
+                    type="date"
+                    id="inputData_prevista_devolucao"
+                    name="inputData_prevista_devolucao"
+                    required
+                >
+
+
+                <!-- DATA DEVOLUÇÃO -->
+
+                <label for="inputData_devolucao">
+                    Data da Devolução
+                </label>
+
+                <input
+                    type="date"
+                    id="inputData_devolucao"
+                    name="inputData_devolucao"
+                >
+
+
+                <!-- STATUS -->
+
+                <label for="selectStatus">
+                    Status
+                </label>
+
+                <select
+                    id="selectStatus"
+                    name="selectStatus"
+                >
+
+                    <option value="ATIVO">
+                        Ativo
+                    </option>
+
+                    <option value="DEVOLVIDO">
+                        Devolvido
+                    </option>
+
+                    <option value="ATRASADO">
+                        Atrasado
+                    </option>
+
+                </select>
+
+
+                <!-- AVISO -->
+
+                <div id="divAviso">
+                    Informe o ID e clique em Procurar
+                </div>
+
+
+                <!-- BOTÕES -->
+
+                <div class="botoes-acao">
+
+                    <input
+                        type="button"
+                        value="Salvar"
+                        id="btSalvar"
+                        onclick="salvar()"
+                        style="display:none;"
+                    >
+
+                    <input
+                        type="button"
+                        value="Cancelar"
+                        id="btCancelar"
+                        onclick="cancelarOperacao()"
+                        style="display:none;"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- ============================= -->
+            <!-- PAINEL LATERAL                -->
+            <!-- ============================= -->
+
+            <aside class="form-direita">
+
+                <h2>Situação dos Empréstimos</h2>
+
+
+                <div class="informacao">
+
+                    <h3>📚 Empréstimos ativos</h3>
+
+                    <p>
+                        Livros que estão atualmente emprestados
+                        e ainda não foram devolvidos.
+                    </p>
+
+                </div>
+
+
+                <div class="informacao atraso">
+
+                    <h3>⚠️ Empréstimos atrasados</h3>
+
+                    <p>
+                        Empréstimos cuja data prevista de devolução
+                        já foi ultrapassada.
+                    </p>
+
+                </div>
+
+
+                <div class="informacao devolvido">
+
+                    <h3>↩️ Livros devolvidos</h3>
+
+                    <p>
+                        Registros de empréstimos que já foram
+                        finalizados com a devolução do livro.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- LISTA / CRUD                    -->
+        <!-- ============================= -->
+
+        <section class="lista-emprestimo">
+
+            <h2>Empréstimos Registrados</h2>
+
+            <div id="outputSaida">
+
+                Carregando empréstimos...
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>
+            Arthur Fonseca - 2º ano - 2026
+        </p>
+
+    </footer>
+
+
+    <script src="./emprestimo.js"></script>
+
+</body>
+
+</html>

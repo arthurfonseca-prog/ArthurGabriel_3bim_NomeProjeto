@@ -1,0 +1,571 @@
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f3efe7;
+    color: #30271f;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+header {
+    background-color: #332820;
+    color: #f5f1e8;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid #6b5849;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+header p {
+    margin: 0;
+    color: #d8cec1;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   CONTAINER PRINCIPAL
+   ========================================= */
+
+.container-master {
+    width: 90%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+
+/* =========================================
+   CARDS DE RESUMO
+   ========================================= */
+
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.card-resumo {
+    background-color: #faf8f3;
+    border: 1px solid #d5cabb;
+    border-radius: 6px;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    box-shadow: 0 2px 7px rgba(60, 45, 30, 0.08);
+}
+
+.card-resumo .icone {
+    font-size: 30px;
+}
+
+.card-resumo h3 {
+    margin: 0 0 6px;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    color: #75685c;
+}
+
+.card-resumo strong {
+    font-size: 28px;
+    font-weight: normal;
+    color: #49382c;
+}
+
+
+/* =========================================
+   FORMULÁRIO + PAINEL LATERAL
+   ========================================= */
+
+.conteudo-principal {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+}
+
+
+/* =========================================
+   FORMULÁRIO
+   ========================================= */
+
+.form-esquerda,
+.form-direita {
+    background-color: #faf8f3;
+    border: 1px solid #d5cabb;
+    border-radius: 6px;
+    padding: 28px;
+
+    box-shadow: 0 2px 7px rgba(60, 45, 30, 0.08);
+}
+
+.form-esquerda h2,
+.form-direita h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    font-size: 22px;
+    font-weight: normal;
+
+    color: #49382c;
+
+    border-bottom: 1px solid #d8cfc3;
+    padding-bottom: 12px;
+}
+
+
+/* =========================================
+   LABELS
+   ========================================= */
+
+label {
+    display: block;
+
+    margin-top: 15px;
+    margin-bottom: 6px;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #51463d;
+}
+
+
+/* =========================================
+   INPUTS E SELECTS
+   ========================================= */
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #cfc3b5;
+    border-radius: 4px;
+
+    background-color: #fffdf9;
+    color: #30271f;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #8b7562;
+}
+
+
+/* =========================================
+   CAMPO ID + BOTÕES
+   ========================================= */
+
+.linha-id {
+    display: flex;
+    gap: 8px;
+}
+
+.linha-id input[type="text"] {
+    flex: 1;
+}
+
+.linha-id input[type="button"] {
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   BOTÕES
+   ========================================= */
+
+input[type="button"] {
+    padding: 10px 16px;
+
+    border: 1px solid #766354;
+    border-radius: 4px;
+
+    background-color: #5a4637;
+    color: #f8f4ed;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+}
+
+input[type="button"]:hover {
+    background-color: #725b48;
+}
+
+
+/* =========================================
+   BOTÕES DE AÇÃO
+   ========================================= */
+
+.botoes-acao {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+#btSalvar {
+    background-color: #4e5945;
+    border-color: #4e5945;
+}
+
+#btSalvar:hover {
+    background-color: #626f57;
+}
+
+#btCancelar {
+    background-color: #8a7867;
+    border-color: #8a7867;
+}
+
+#btCancelar:hover {
+    background-color: #9a8877;
+}
+
+
+/* =========================================
+   AVISO
+   ========================================= */
+
+#divAviso {
+    margin-top: 20px;
+    padding: 12px;
+
+    border-left: 3px solid #9b856e;
+
+    background-color: #f1ece4;
+
+    color: #66594e;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   PAINEL LATERAL
+   ========================================= */
+
+.form-direita {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.informacao {
+    padding: 17px;
+
+    background-color: #f1ece4;
+
+    border-left: 4px solid #766354;
+    border-radius: 3px;
+}
+
+.informacao h3 {
+    margin: 0 0 8px;
+
+    font-size: 16px;
+    font-weight: normal;
+
+    color: #49382c;
+}
+
+.informacao p {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: #66594e;
+}
+
+
+/* =========================================
+   AVISO DE ATRASO
+   ========================================= */
+
+.informacao.atraso {
+    border-left-color: #9a7257;
+}
+
+.informacao.atraso h3 {
+    color: #79553e;
+}
+
+
+/* =========================================
+   DEVOLVIDOS
+   ========================================= */
+
+.informacao.devolvido {
+    border-left-color: #65705a;
+}
+
+.informacao.devolvido h3 {
+    color: #536047;
+}
+
+
+/* =========================================
+   LISTA DE EMPRÉSTIMOS
+   ========================================= */
+
+.lista-emprestimo {
+    margin-top: 30px;
+
+    background-color: #faf8f3;
+
+    border: 1px solid #d5cabb;
+    border-radius: 6px;
+
+    padding: 28px;
+
+    box-shadow: 0 2px 7px rgba(60, 45, 30, 0.08);
+}
+
+.lista-emprestimo h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    font-size: 22px;
+    font-weight: normal;
+
+    color: #49382c;
+
+    border-bottom: 1px solid #d8cfc3;
+    padding-bottom: 12px;
+}
+
+
+/* =========================================
+   ÁREA ONDE O JS COLOCARÁ OS EMPRÉSTIMOS
+   ========================================= */
+
+#outputSaida {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   CARDS DE EMPRÉSTIMOS
+   ========================================= */
+
+.card-emprestimo {
+    display: grid;
+
+    grid-template-columns: 1.2fr 1.5fr 1fr 1fr 1fr auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px;
+
+    background-color: #f5f1e9;
+
+    border: 1px solid #d8cec1;
+    border-radius: 5px;
+}
+
+.card-emprestimo h3 {
+    margin: 0 0 5px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-weight: normal;
+
+    color: #49382c;
+}
+
+.card-emprestimo p {
+    margin: 0;
+
+    color: #71665d;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   STATUS
+   ========================================= */
+
+.status {
+    display: inline-block;
+
+    padding: 6px 9px;
+
+    border-radius: 4px;
+
+    text-align: center;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-ativo {
+    background-color: #e3e9df;
+    color: #536047;
+}
+
+.status-atrasado {
+    background-color: #eee2d8;
+    color: #79553e;
+}
+
+.status-devolvido {
+    background-color: #e5e1dc;
+    color: #665d55;
+}
+
+
+/* =========================================
+   BOTÕES DOS CARDS
+   ========================================= */
+
+.card-emprestimo .acoes {
+    display: flex;
+    gap: 6px;
+}
+
+.card-emprestimo button {
+    padding: 7px 10px;
+
+    border: 1px solid #9d8d7d;
+    border-radius: 4px;
+
+    background-color: #faf8f3;
+    color: #51463d;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.card-emprestimo button:hover {
+    background-color: #e8e0d5;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    margin-top: 50px;
+
+    padding: 25px;
+
+    background-color: #332820;
+
+    color: #d8cec1;
+
+    text-align: center;
+
+    border-top: 1px solid #6b5849;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    .resumo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .conteudo-principal {
+        grid-template-columns: 1fr;
+    }
+
+    .card-emprestimo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .container-master {
+        width: 94%;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .resumo {
+        grid-template-columns: 1fr;
+    }
+
+    .form-esquerda,
+    .form-direita,
+    .lista-emprestimo {
+        padding: 20px;
+    }
+
+    .linha-id {
+        flex-direction: column;
+    }
+
+    .botoes-acao {
+        flex-direction: column;
+    }
+
+    .botoes-acao input {
+        width: 100%;
+    }
+
+    .card-emprestimo {
+        grid-template-columns: 1fr;
+    }
+
+    .card-emprestimo .acoes {
+        flex-wrap: wrap;
+    }
+
+}
